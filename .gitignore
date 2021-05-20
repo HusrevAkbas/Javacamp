@@ -1,2 +1,5 @@
 .metadata
-ProjectDay3/bin
+**/.settings
+**/.classpath
+**/.project
+**/bin
