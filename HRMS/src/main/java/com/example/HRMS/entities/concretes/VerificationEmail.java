@@ -7,27 +7,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name="job_positions")
-public class JobPosition {
-	
+@Table(name="email_verifications")
+public class VerificationEmail {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
-	@Column(name="title")
-	private String title;
+	@Column(name="verification_code")
+	private String verificationCode;
 	
-	public JobPosition() {}
+	@Column(name="user_id")
+	private int userId;
 	
-	public JobPosition(int id, String title) {
-		super();
-		this.id = id;
-		this.title = title;
-	}
-	
+	@Column(name="is_verified")
+	private boolean isVerified;
 }
