@@ -30,5 +30,4 @@ public class MernisServiceAdapter implements UserCheckService {
 		return result;
 		}
 	}
-	
 }
