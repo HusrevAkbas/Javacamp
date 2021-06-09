@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.HRMS.business.abstracts.EmployerService;
 import com.example.HRMS.core.utilities.results.DataResult;
 import com.example.HRMS.core.utilities.results.Result;
-import com.example.HRMS.entities.concretes.Candidate;
 import com.example.HRMS.entities.concretes.Employer;
 
 @RestController
@@ -34,11 +33,17 @@ public class EmployerController {
 	
 	@PostMapping("/add")
 	public Result add(@RequestBody Employer employer, String confirmPassword) {
+		
 		return this.employerService.add(employer, confirmPassword);
 	}
 	
 	@PostMapping("/checkverificationcode")
 	public Result checkVerificationeMailCode(@RequestBody int id, String verificationcode) {
 		return this.employerService.checkVerificationEmailCode(id, verificationcode);
+	}
+
+	@PostMapping("/changeactivestate")
+	public Result changeActiveState(@RequestBody int id){
+		return this.employerService.changeActiveState(id);
 	}
 }

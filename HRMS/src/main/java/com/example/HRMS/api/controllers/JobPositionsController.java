@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.HRMS.business.abstracts.JobPositionService;
 import com.example.HRMS.core.utilities.results.DataResult;
 import com.example.HRMS.core.utilities.results.Result;
-import com.example.HRMS.entities.concretes.Employer;
 import com.example.HRMS.entities.concretes.JobPosition;
 
 @RestController
