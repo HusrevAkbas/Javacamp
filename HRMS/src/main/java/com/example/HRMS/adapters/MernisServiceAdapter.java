@@ -13,6 +13,8 @@ public class MernisServiceAdapter implements UserCheckService {
 
 	@Override
 	public boolean checkIfRealPerson(Candidate candidate) {
+		
+		//TEST SIRASINDA GERÇEK KİMLİK KULLANILMAMASI İÇİN HER ZAMAN TRUE DÖNDÜRMEKTEDİR.
 		return true;
 //		KPSPublicSoapProxy client = new KPSPublicSoapProxy();
 //
