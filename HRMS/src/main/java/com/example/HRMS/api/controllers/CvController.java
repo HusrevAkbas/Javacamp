@@ -5,11 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.HRMS.business.abstracts.CvService;
 import com.example.HRMS.core.utilities.results.DataResult;
 import com.example.HRMS.entities.concretes.CurriculumVitae;
+import com.example.HRMS.entities.concretes.dtos.CvAllDto;
 
 @RestController
 @RequestMapping("/api/cv")
@@ -26,5 +28,10 @@ public class CvController {
 	@GetMapping("/getall")
 	public DataResult<List<CurriculumVitae>> getAll(){
 		return this.cvService.getAll();
+	}
+
+	@GetMapping("/getfullcv")
+	public DataResult<CvAllDto> getCvAllDto(@RequestParam int id){
+		return this.cvService.getCvAllDto(id);
 	}
 }
