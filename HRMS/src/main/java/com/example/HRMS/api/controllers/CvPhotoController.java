@@ -3,9 +3,11 @@ package com.example.HRMS.api.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,8 +32,8 @@ public class CvPhotoController {
 	public DataResult<List<CvPhoto>> getAll(){
 		return this.photoService.getAll();
 	}
-	@PostMapping("/addimage")
-	public Result add(@RequestParam("file") MultipartFile image) {
-		return this.photoService.add(image);
+	@RequestMapping(value = "/addimage", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public Result add(@RequestParam(value = "file") MultipartFile image, @RequestParam int cvId) {
+		return this.photoService.add(image, cvId);
 	}
 }
