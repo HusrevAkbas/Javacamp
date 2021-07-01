@@ -11,5 +11,5 @@ import com.example.HRMS.entities.concretes.CvPhoto;
 
 public interface CvPhotoService {
 	DataResult<List<CvPhoto>> getAll();
-	Result add(MultipartFile file);
+	Result add(MultipartFile file, int cvId);
 }

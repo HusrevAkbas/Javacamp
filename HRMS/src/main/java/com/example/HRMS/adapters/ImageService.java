@@ -1,7 +1,9 @@
 package com.example.HRMS.adapters;
 
-import com.example.HRMS.core.utilities.results.Result;
+import java.util.Map;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public interface ImageService {
-	Result save();
+	Map save(MultipartFile file);
 }
