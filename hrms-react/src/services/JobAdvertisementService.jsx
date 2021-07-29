@@ -1,10 +1,13 @@
 import axios from 'axios'
  export default class JobAdvertisementService {
-   getJobAdvertisements () {
+   getAll () {
      return axios.get("http://localhost:8080/api/jobadvertisement/getall")
    }
 
-    addEmployer (postReq) {
-      axios.post('http://localhost:8080/api/jobadvertisement/add', postReq)
-    }
+   add (postReq) {
+    axios.post('http://localhost:8080/api/jobadvertisement/add', postReq)
+  .then(function (response) {
+    console.log(response);
+  })
+   }
  }

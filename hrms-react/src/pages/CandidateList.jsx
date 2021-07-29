@@ -8,7 +8,7 @@ export default function CandidateList () {
   useEffect(()=>{
     let candidateService = new CandidateService();
     candidateService.getCandidates().then(result=>setCandidate(result.data.data))
-  })
+  },[])
 
   return(
     <Table celled fixed singleLine>

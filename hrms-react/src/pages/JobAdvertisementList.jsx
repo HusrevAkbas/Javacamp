@@ -7,8 +7,8 @@ export default function JobAdvertisementList () {
   const [jobAdvertisements, setJobAdvertisement] = useState([])
   useEffect(()=>{
     let jobAdvertisementService = new JobAdvertisementService();
-    jobAdvertisementService.getJobAdvertisements().then(result=>setJobAdvertisement(result.data.data))
-  })
+    jobAdvertisementService.getAll().then(result=>setJobAdvertisement(result.data.data))
+  },[])
 
   return(
     <Table celled fixed singleLine>

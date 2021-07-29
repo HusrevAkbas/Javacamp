@@ -8,7 +8,7 @@ export default function EmployerList () {
   useEffect(()=>{
     let employerService = new EmployerService();
     employerService.getEmployers().then(result=>setEmployer(result.data.data))
-  })
+  },[])
 
   return(
     <Table celled fixed singleLine>

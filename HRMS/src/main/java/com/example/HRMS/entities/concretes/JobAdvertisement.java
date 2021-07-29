@@ -53,6 +53,12 @@ public class JobAdvertisement {
 	@Column(name="active_state")
 	private boolean activeState;
 	
+	@Column(name="work_place_type")
+	private String workPlaceType;
+	
+	@Column(name="work_time_type")
+	private String workTimeType;
+	
 	@ManyToOne
 	private Employer employer;
 	
